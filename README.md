@@ -1,1 +1,1 @@
-deploy:
+deploy: https://ploytary.github.io/ds-export/
