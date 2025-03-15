@@ -1,0 +1,18 @@
+.brand-check-list {
+  li {
+    display: flex;
+    gap: 15px;
+
+    &::before {
+      flex:none;
+      display: inline-block;
+      content: '';
+      background-color: currentcolor;
+      width: 1.2em;
+      height: 1.2em;
+      mask: url('@image/prepared/common/svg/css-sprite.svg#check');
+      mask-repeat: no-repeat;
+      mask-position: bottom;
+    }
+  }
+}

@@ -1,0 +1,115 @@
+@use '../abstracts';
+
+.steps-section {
+  --slide-padding-inline: 30px;
+  --slide-padding-block: 30px;
+
+  $pagination-bullet-size: 30px;
+  
+  &__slide-placeholder {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  &__slider {
+    counter-reset: order;
+  }
+
+  &__slide {
+    padding: var(--slide-padding-block) var(--slide-padding-inline);
+    padding-bottom: calc(var(--slide-padding-block) + $pagination-bullet-size * 2);
+    height: 100%;
+    background-color: var(--neutral-color-96);
+    border-radius: 40px;
+    counter-increment: order;
+  }
+
+  &__slide-columns {
+    display: grid;
+    gap: var(--gap-s);
+  }
+
+  &__slide-headline {
+    max-width: 659px;
+    text-align: center;
+  }
+
+  &__slide-title {
+    margin-bottom: 16px;
+  }
+
+  &__slide-order-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 16px;
+
+    &::before {
+      display: inline;
+      content: counter(order, decimal-leading-zero);
+    }
+
+    .emoji {
+      width: 72px;
+      height: 72px;
+    }
+  }
+
+  &__slide-description {
+    padding-top: 25px;
+
+    ol {
+      list-style-type: decimal;
+      list-style-position: outside;
+      padding-left: 34px;
+    }
+
+
+    li:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  .brand-slider__pagination {
+    bottom: var(--slide-padding-block);
+  }
+
+  @include abstracts.mq-from(medium) {
+    --slide-padding-inline: 80px;
+    --slide-padding-block: 40px;
+
+    &__slide-headline {
+      text-align: left;
+    }
+
+    &__slide-order-number {
+      justify-content: start;
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    &__slide-placeholder {
+      margin-bottom: 60px;
+    }
+
+    &__slide-title {
+      margin-bottom: 30px;
+    }
+
+    &__slide-description {
+      li:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  @include abstracts.mq-from(large) {
+    --slide-padding-inline: 150px;
+    --slide-padding-block: 80px;
+    
+    &__slide-columns {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

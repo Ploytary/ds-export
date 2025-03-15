@@ -1,0 +1,13 @@
+body {
+  color: var(--brand-color-primary);
+}
+
+strong {
+  color: var(--brand-color-accent-primary);
+}
+
+strong.gradient-highlight {
+  color: transparent;
+  background-image: var(--brand-gradient-primary);
+  background-clip: text;
+}

@@ -1,0 +1,22 @@
+@use '../abstracts';
+@forward './shared/index';
+@forward './page-header';
+@forward './section';
+@forward './hero-section';
+@forward './advantages-section';
+@forward './service-prices-section';
+@forward './additional-service-section';
+@forward './partners-section';
+@forward './customer-reviews-section';
+@forward './killer-feature-section';
+@forward './call-to-action-section';
+@forward './call-to-action-registration-alpha';
+@forward './call-to-action-registration-beta';
+@forward './steps-section';
+@forward './presentation-section';
+@forward './why-us-section';
+@forward './faq-section';
+@forward './marketing-offer-section';
+@forward './contacts-section';
+@forward './page-footer';
+

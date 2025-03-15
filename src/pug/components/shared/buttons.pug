@@ -1,0 +1,13 @@
+mixin main-button(label)
+  -
+    const { href, accent, disabled, class: classAttr, ...props } = attributes;
+    const classNames = [
+      accent && 'main-button--accent',
+      disabled && 'main-button--disabled',
+      classAttr,
+    ];
+
+  if href
+    a.button.main-button&attributes(props)(href = href, class = classNames)= label
+  else 
+    button.button.main-button&attributes(props)(class = classNames)= label

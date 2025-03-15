@@ -1,0 +1,32 @@
+-
+  const additionalServiceSection = {
+    title: 'Дополнительные услуги',
+    list: [
+      {
+        title: 'Создание<br>промо-страницы',
+        price: 'от <strong class="gradient-highlight">15 000 ₽</strong>',
+        button: {
+          label: 'Купить',
+          url: '#',
+        },
+      },
+      {
+        title: 'Настройка и ведение<br>Яндекс.Директ',
+        price: 'от <strong class="gradient-highlight">10 000 ₽</strong>',
+        button: {
+          label: 'Купить',
+          url: '#',
+        },
+      },
+    ],
+  };
+
+section.section.additional-service-section
+  h2.section__title= additionalServiceSection.title
+  ul.additional-service-section__list 
+    each service in additionalServiceSection.list
+      li.additional-service-section__item 
+        article.service-short-card
+          h3.service-short-card__title!= service.title
+          p.service-short-card__price!= service.price 
+          +main-button(service.button.label)(href= service.button.url, accent)

@@ -1,0 +1,233 @@
+@use '../abstracts';
+
+:root {
+  --main-font: "Inter", sans-serif;
+  --display-font: "Montserrat", sans-serif;
+}
+
+body {
+  font-family: var(--main-font);
+
+  @include abstracts.set-font-properties(var(--font-fluid-size-s), 1.2, 400);
+}
+
+
+.page-header {
+  &__navigation {
+    @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 400);
+  }
+
+  &__phone {
+    @include abstracts.set-font-properties(var(--font-fluid-size-l), 1.2, 400);
+  }
+
+  &__navigation-mobile {
+    .page-header__phone {
+      @include abstracts.set-font-properties(var(--font-fluid-size-s), 1.2, 400);
+    }
+  }
+}
+
+.main-button {
+  @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 400);
+}
+
+.section {
+  &__title {
+    font-family: var(--display-font);
+
+    @include abstracts.set-font-properties(var(--font-fluid-display-size-m), 1.083, 700);
+  }
+
+  &__subtitle {
+    @include abstracts.set-font-properties(var(--font-fluid-size-l), 1.2, 400);
+  }
+}
+
+.hero-section {
+  &__title {
+    @include abstracts.set-font-properties(var(--font-fluid-display-size-l), 1, 700);
+  }
+
+  &__description {
+    @include abstracts.set-font-properties(var(--font-fluid-size-l), 1.2, 400);
+  }
+
+  &__links {
+    @include abstracts.set-font-properties(var(--font-fluid-size-s), 1.2, 400);
+  }
+}
+
+.advantages-section {
+  &__item-title {
+    @include abstracts.set-font-properties(var(--font-fluid-size-l), 1.2, 400);
+  }
+
+  &__item-description {
+    @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 400);
+  }
+}
+
+.gradient-highlight {
+  @include abstracts.set-font-properties(var(--font-fluid-display-size-s), 1.2, 700);
+}
+
+.service-price-card {
+  @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 400);
+
+  &__title {
+    @include abstracts.set-font-properties(var(--font-fluid-display-size-s), 1.16, 700);
+  }
+
+  &__category {
+    @include abstracts.set-font-properties(var(--font-fluid-size-l), 1.2, 400);
+  }
+
+  &__feature-item {
+    &--accent {
+      @include abstracts.set-font-properties($line-height: 1.2, $weight: 700);
+    }
+  }
+}
+
+.service-short-card {
+  &__title {
+    @include abstracts.set-font-properties(var(--font-fluid-display-size-s), 1.16, 700);
+  }
+
+  &__price {
+    @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 400);
+
+    margin-bottom: 30px;
+  }
+}
+
+.text-review-card {
+  @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 400);
+
+  &__rating {
+    font-family: var(--display-font);
+
+    @include abstracts.set-font-properties(var(--font-fluid-display-size-s), 1.44, 700);
+  }
+}
+
+.video-review-card {
+  @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 400);
+}
+
+.killer-feature-section {
+  &__content {
+    @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 400);
+  }
+}
+
+.call-to-action {
+  &__text {
+    font-family: var(--display-font);
+
+    @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 700);
+
+  }
+
+  @include abstracts.mq-from(large) {
+    &__text {
+      @include abstracts.set-font-properties(var(--font-fluid-display-size-m), 1.083, 700);
+    }
+
+    &__button {
+      @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 400);
+    }
+  }
+}
+
+.steps-section {
+  &__slide-placeholder {
+    @include abstracts.set-font-properties(var(--font-fluid-display-size-s), 1.083, 700);
+    font-family: var(--display-font);
+  }
+
+  &__slide-order-number {
+    @include abstracts.set-font-properties(var(--font-fluid-display-size-l), 1, 700);
+    font-family: var(--display-font);
+  }
+
+  &__slide-title {
+    @include abstracts.set-font-properties(var(--font-fluid-display-size-s), 1.083, 700);
+    font-family: var(--display-font);
+  }
+
+  &__slide-description {
+    @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 400);
+
+    p:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  @include abstracts.mq-from(medium) {
+    &__slide-placeholder {
+      @include abstracts.set-font-properties(var(--font-fluid-display-size-m), 1.083, 700);
+    }
+
+    &__slide-order-number {
+      @include abstracts.set-font-properties(var(--font-fluid-display-size-l), 1, 700);
+    }
+
+    &__slide-title {
+      @include abstracts.set-font-properties(var(--font-fluid-display-size-m), 1.083, 700);
+    }
+  }
+}
+
+.why-us-section {
+  &__advantages-primary-item {
+    @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 400);
+  }
+
+  &__advantages-primary-item-headline {
+    @include abstracts.set-font-properties(var(--font-fluid-display-size-l), 1, 700);
+    font-family: var(--display-font);
+  }
+
+  &__advantages-secondary-item {
+    .emoji {
+      width: 50px;
+      height: 50px;
+    }
+
+    dt {
+      @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 700);
+    }
+
+    dd {
+      @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 400);
+    }
+  }
+}
+
+.marketing-offer-section {
+  &__text {
+    @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 400);
+  }
+}
+
+.contacts-section {
+  &__address {
+    @include abstracts.set-font-properties(var(--font-fluid-size-l), 1.2, 400);
+  }
+}
+
+.page-footer {
+  &__copyright {
+    @include abstracts.set-font-properties(var(--font-fluid-size-l), 1.2, 400);
+  }
+
+  &__company-req {
+    @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 400);
+  }
+
+  &__links {
+    @include abstracts.set-font-properties(var(--font-fluid-size-s), 1.2, 400);
+  }
+}

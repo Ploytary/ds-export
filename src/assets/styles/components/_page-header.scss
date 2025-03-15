@@ -1,0 +1,135 @@
+@use '../abstracts';
+
+.page-header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  inset-inline: 0;
+  background-color: var(--brand-color-primary);
+  padding-block: 6px;
+  border-radius: 0 0 40px 40px;
+  
+  &__phone {
+    display: none;
+    align-items: center;
+    gap: 12px
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    color: var(--neutral-color-100);
+
+    & > *:first-child {
+      justify-self: start;
+    }
+
+    & > *:last-child {
+      justify-self: end;
+    }
+  }
+
+  &__inner &__phone {
+    justify-self: end;
+  }
+
+  &__logo {
+    width: 251px;
+    height: 70px;
+  }
+
+  &__navigation {
+    align-self: stretch;
+    display: none;
+  }
+
+  &__burger-button {
+    align-self: center;
+  }
+
+  &__navigation-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__navigation-item {
+    a {
+      display: flex;
+      padding: 12px 30px;
+      align-items: center;
+      height: 100%;
+    }
+  }
+
+  &__phone-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__link {
+    color: var(--neutral-color-100);
+    transition-duration: var(--transition-hover);
+    transition-property: color;
+
+    &:hover {
+      color: var(--neutral-color-75);
+    }
+
+    &:active {
+      transition-duration: unset;
+      color: var(--brand-color-accent-primary);
+    }
+  }
+
+  &__navigation-mobile {
+    padding-top: 100px;
+    padding-inline: 20px;
+    position: fixed;
+    gap: 40px;
+    flex-direction: column;
+    z-index: 101;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    background-color: var(--brand-color-primary);
+
+    .page-header__navigation-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-close-button {
+      position: absolute;
+      left: 20px;
+      top: 40px;
+
+      .svg-icon {
+        transform: rotate(45deg);
+      }
+    }
+
+    .page-header__link {
+      padding-left: 0;
+    }
+  }
+
+  @include abstracts.mq-from(large) {
+    &__navigation {
+      display: flex;
+    }
+
+    &__phone {
+      white-space: nowrap;
+      display: flex;
+    }
+
+    &__inner {
+      grid-template-columns: 1fr auto 1fr;
+    }
+
+    &__burger-button {
+      display: none;
+    }
+  }
+}

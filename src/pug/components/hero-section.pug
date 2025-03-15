@@ -1,0 +1,56 @@
+-
+  const heroSectionContent = {
+    title: '<strong>Лидогенерация</strong><br>для бизнеса',
+    description: 'Покупайте только целевые лиды по фиксированной цене от 300 ₽',
+    descriptionImg: '@image/prepared/common/money-mouth-face.png',
+    textImage: '',
+    button: {
+      label: 'Выбрать пакет лидов',
+      url: '#',
+    },
+    decorImage: '@image/prepared/common/hero-1.webp',
+    links: [
+      {
+        label: 'Лидогенерация в b2b',
+        url: '#',
+      },
+      {
+        label: 'Биржа лидов',
+        url: '#',
+      },
+      {
+        label: 'Сервис по Лидгену',
+        url: '#',
+      },
+      {
+        label: 'Лиды для производства',
+        url: '#',
+      },
+      {
+        label: 'Клиенты для бизнеса',
+        url: '#',
+      },
+      {
+        label: 'Определить телефон посетителя сайта',
+        url: '#',
+      },
+    ],
+  };
+
+
+section.section.hero-section
+  .hero-section__inner
+    .hero-section__columns 
+      .hero-section__content
+        h2.section__title.hero-section__title
+          span!= heroSectionContent.title
+        p.hero-section__description
+          span= heroSectionContent.description
+          +emoji-picture(heroSectionContent.descriptionImg)
+        +main-button(heroSectionContent.button.label)(accent, class= 'hero-section__button')
+      .hero-section__decor-image-wrapper
+        +flex-image-mask(heroSectionContent.decorImage, 25.16, 29.38)(class='hero-section__decor-image')
+    ul.hero-section__links 
+      each link in heroSectionContent.links
+        li.hero-section__link-item 
+          a(href= link.url)!= link.label

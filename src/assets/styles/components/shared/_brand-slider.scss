@@ -1,0 +1,41 @@
+.brand-slider {
+  position: relative;
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  &__pagination {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+
+    .swiper-pagination-bullet {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: var(--neutral-color-86);
+      transition-property: background-color;
+      transition-duration: var(--transition-hover);
+
+      &-active {
+        pointer-events: none;
+        background-color: var(--brand-color-accent-primary);
+      }
+
+      &:hover {
+        background-color: var(--neutral-color-75);
+      }
+
+      &:active {
+        transition-duration: unset;
+        background-color: var(--neutral-color-50);
+      }
+    }
+  }
+}

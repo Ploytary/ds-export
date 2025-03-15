@@ -1,0 +1,15 @@
+-
+  const presentationSectionContent = {
+    title: 'Мы подготовили для вас<br>видео-презентацию <strong>нашей работы</strong>',
+    emoji: '@image/prepared/common/video-camera.png',
+    videoSrc: '#',
+  };
+
+section.section.presentation-section
+  h2.section__title.presentation-section__title
+    span!= presentationSectionContent.title
+    +emoji-picture(presentationSectionContent.emoji)
+  .brand-videoplayer.presentation-section__videoplayer
+    video(src=presentationSectionContent.videoSrc)
+    button.button.brand-videoplayer__play-button
+      span.visually-hidden Воспроизвести/остановить

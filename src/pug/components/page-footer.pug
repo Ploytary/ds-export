@@ -1,0 +1,35 @@
+-
+  const pageFooterContent = {
+    copyright: '© 2025 Все права защищены. Технология «Лид Конвейер» - лидогенерация для бизнеса.',
+    companyReq: 'ООО «ДС-ГРУПП» ИНН 7801355174 ОГРН 1187847129425',
+    links: [
+      {
+        label: 'Блог',
+        url: '#',
+      },
+      {
+        label: 'Договор-оферта',
+        url: '#',
+      },
+      {
+        label: 'Политика конфиденциальности',
+        url: '#',
+      },
+      {
+        label: 'Соглашение об обработке данных',
+        url: '#',
+      },
+      {
+        label: 'Вход в личный кабинет',
+        url: '#',
+      },
+    ],
+  };
+
+footer.page-footer.page-grid
+  small.page-footer__copyright= pageFooterContent.copyright
+  small.page-footer__company-req= pageFooterContent.companyReq
+  ul.page-footer__links
+    each link in pageFooterContent.links
+      li.page-footer__link
+        a(href= link.url)= link.label

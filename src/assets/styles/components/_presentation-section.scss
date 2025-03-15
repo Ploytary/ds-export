@@ -1,0 +1,16 @@
+@use '../abstracts';
+
+.presentation-section {
+  &__videoplayer {
+    margin-inline: auto;
+    max-width: 1180px;
+    aspect-ratio: 118 / 54;
+  }
+
+  &__title {
+    .emoji {
+      width: 72px;
+      height: 72px;
+    }
+  }
+}

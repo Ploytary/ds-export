@@ -1,0 +1,64 @@
+@use '../../abstracts';
+
+.brand-accordion {
+  --accodion-padding: 20px;
+  gap: var(--gap-s);
+
+  .accordion__details {
+    color: var(--neutral-color-0);
+    transition-duration: var(--transition-menu);
+  }
+
+  .accordion__summary,
+  .accordion__details-content {
+    padding: var(--accodion-padding);
+    border-radius: 30px;
+    background-color: var(--neutral-color-96); 
+  }
+
+  .accordion__icon {
+    transition-duration: var(--transition-menu);
+    transition-property: color, transform;
+  }
+
+  & :is(.accordion__slot--open, .accordion__slot--opened) .accordion__icon {
+    transform: rotate(-180deg);
+  }
+
+  .accordion__summary {
+    border: 3px solid transparent;
+    transition-duration: var(--transition-hover);
+    transition-property: border;
+
+    &:hover {
+      border: 3px solid var(--brand-color-accent-primary);
+
+    }
+  }
+
+  .accordion__summary:hover .accordion__icon {
+    color: var(--brand-color-accent-primary);
+  }
+
+  .accordion__details-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-s);
+    margin-top: var(--gap-s);
+  }
+
+  .accordion__trigger {
+    justify-content: space-between;
+    text-align: inherit;
+    flex-direction: row;
+    gap: 60px;
+  }
+
+  @include abstracts.mq-from(medium) {
+    --accodion-padding: 30px;
+  }
+
+  @include abstracts.mq-from(large) {
+    --accodion-padding: 40px;
+  }
+}

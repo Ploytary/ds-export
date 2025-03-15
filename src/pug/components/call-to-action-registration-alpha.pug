@@ -1,0 +1,20 @@
+-
+  const callToActionAlphaContent = {
+    a11yTitle: 'Регистрация в системе',
+    text: 'Зарегистрируйтесь и добавьте свой проект в систему — начните получать Лидов сегодня!',
+    button: {
+      label: 'Зарегистрироваться',
+      url: '#'
+    },
+    decorImage: '@image/prepared/common/call-to-action-1.webp',
+  };
+
+section.section.call-to-action.call-to-action-registration-alpha
+  h2.section__title.visually-hidden= callToActionAlphaContent.a11yTitle
+  .call-to-action__inner
+    .call-to-action__columns 
+      .call-to-action__content
+        .call-to-action__text= callToActionAlphaContent.text
+        +main-button(callToActionAlphaContent.button.label)(href= callToActionAlphaContent.button.url, accent, class='call-to-action__button')
+      .call-to-action__decor-image-wrapper
+        +flex-image-mask(callToActionAlphaContent.decorImage, 21, 30)(class='call-to-action__decor-image')

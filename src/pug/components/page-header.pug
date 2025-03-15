@@ -1,0 +1,56 @@
+-
+  const pageHeaderContent = {
+    navList: [
+      {
+        label: 'Как это работает',
+        url: '#',
+      },
+      {
+        label: 'Цена',
+        url: '#',
+      },
+      {
+        label: 'Отзывы',
+        url: '#',
+      },
+      {
+        label: 'Контакты',
+        url: '#',
+      },
+    ],
+    phone: {
+      label: '+7 495 118-32-82',
+      url: 'tel:+74951183232',
+    }
+  }
+
+header.page-header.page-grid
+  .page-header__inner
+    .page-header__logo.logo
+      a(href = '#')
+        img(src='@image/prepared/content/LOGO.png', alt='Leadconveer')
+    nav.page-header__navigation 
+      ul.page-header__navigation-list 
+        each item in pageHeaderContent.navList
+          li.page-header__navigation-item
+            a.page-header__link(href = item.url)= item.label
+    p.page-header__phone 
+      +sprite('whatsapp')(class = 'page-header__phone-icon')
+      +sprite('telegram')(class = 'page-header__phone-icon')
+      a.page-header__link(href = pageHeaderContent.phone.url)= pageHeaderContent.phone.label
+    button.button.icon-button.page-header__burger-button
+      span.visually-hidden Открыть меню
+      +sprite('burger')
+
+    nav.page-header__navigation-mobile.burger-menu
+      button.button.icon-button.page-header__navigation-mobile-close-button.burger-menu__content-close-button
+        span.visually-hidden Закрыть
+        +sprite('plus')
+      ul.page-header__navigation-list 
+        each item in pageHeaderContent.navList
+          li.page-header__navigation-item
+            a.page-header__link(href = item.url)= item.label
+      p.page-header__phone 
+        +sprite('whatsapp')(class = 'page-header__phone-icon')
+        +sprite('telegram')(class = 'page-header__phone-icon')
+        a.page-header__link(href = pageHeaderContent.phone.url)= pageHeaderContent.phone.label

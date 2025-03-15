@@ -1,0 +1,41 @@
+-
+  const advantagesSectionContent = {
+    title: 'Завалим ваш отдел продаж<br><strong>целевыми Лидами</strong>',
+    list: [
+      {
+        term: 'Оплата за результат',
+        description: 'Вы платите только за переданные  и получение вами целевые Лиды  — их контактные данные (телефон, Telegram, email)',
+        bgImage: '@image/prepared/common/Graphics-1.png',
+      },
+      {
+        term: 'Качественные лиды',
+        description: 'Все передаваемые вам Лиды — это потенциальные клиенты, которые искали ваш товар или услугу',
+        bgImage: '@image/prepared/common/Graphics-2.png',
+      },
+      {
+        term: 'Любой объём —<br>на ваш выбор',
+        description: 'Покупайте сколько контактов потенциальных клиентов в месяц — сколько требуется вам!',
+        bgImage: '@image/prepared/common/Graphics-3.png',
+      },
+      {
+        term: 'Комплекс технологий',
+        description: 'После расчёта стоимости Лидов и оплаты выбранного пакета — вы получите уникальный код для своего сайта, который позволит отслеживать контакты тех, кто не оставил заявку',
+        bgImage: '@image/prepared/common/Graphics-4.png',
+      },
+    ],
+  };
+
+section.section.advantages-section
+  h2.section__title
+    span!= advantagesSectionContent.title
+  dl.advantages-section__list
+    each item in advantagesSectionContent.list
+      - const url = require(item.bgImage);
+      .advantages-section__item
+        dt.advantages-section__item-title
+          p!= item.term
+        dd.advantages-section__item-description()
+          p= item.description
+          .advantages-section__item-decor-image
+            .advantages-section__item-decor-image-front(style = `background-image: url(${url})`)
+

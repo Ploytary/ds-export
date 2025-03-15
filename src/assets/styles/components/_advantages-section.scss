@@ -1,0 +1,104 @@
+@use '../abstracts';
+
+.advantages-section {
+  padding-top: 70px;
+
+  $decor-image-width: 364px;
+  $gap-between: 10px;
+
+  &__list {
+    display: grid;
+    gap: var(--gap-s);
+  }
+
+  &__item {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    padding-block: 60px;
+    min-height: 349px;
+    container-type: inline-size;
+    border-radius: 30px;
+    background-color: var(--neutral-color-96);
+  }
+
+  &__item-title {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    padding-inline: 40px;
+    margin-bottom: 12px;
+    
+    &::after {
+      @include abstracts.decor-star;
+      background-image: var(--brand-gradient-primary);
+      transform: rotate(15deg) translate(0, -5px);
+      position: static;
+      flex: none;
+      align-self: start;
+    }
+  }
+
+  &__item-description {
+    padding-inline: 40px;
+    color: var(--neutral-color-50);
+  }
+
+  &__item-decor-image {
+    opacity: 0.1;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: 0;
+    width: $decor-image-width;
+    height: 100%;
+
+    transition-duration: var(--transition-fade);
+    transition-property: opacity;
+
+    &-front {
+      height: 100%;
+      width: 100%;
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: right bottom;
+    }
+
+    &::after {
+      position: absolute;
+      z-index: -2;
+      right: -47px;
+      bottom: -89px;
+      width: 373px;
+      height: 294px;
+      content: '';
+      background-size: contain;
+      background-image: radial-gradient(ellipse 100% 100% at center, var(--brand-color-primary) 49.5%, transparent 50%);
+      transform: rotate(-25deg);
+    }
+  }
+
+  @include abstracts.cq-from($decor-image-width * 2) {
+    &__item-title, &__item-description {
+      padding-right: $decor-image-width + $gap-between;
+    }
+
+    &__item {
+      &::after {
+        opacity: 1;
+      }
+    }
+
+
+    &__item-decor-image {
+      opacity: 1;
+    }
+  }
+
+
+  @include abstracts.mq-from(large) {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

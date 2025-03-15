@@ -1,0 +1,27 @@
+@use '../../abstracts';
+
+.brand-videoplayer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 40px;
+  background-color: var(--brand-color-primary);
+
+  video {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__play-button {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: abstracts.fluid-size(40px, 70px, small, huge);
+    height: auto;
+    aspect-ratio: 1;
+    background-image: var(--brand-gradient-primary);
+    mask: url('@image/prepared/common/svg/css-sprite.svg#play');
+    mask-position: center;
+    mask-repeat: no-repeat;
+    transform: rotate(90deg);
+  }
+}

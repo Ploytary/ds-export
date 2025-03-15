@@ -1,0 +1,20 @@
+-
+  const callToActionRegistrationBetaContent = {
+    a11yTitle: 'Регистрация в системе',
+    text: 'Давайте принесём результат Вашему бизнесу? Завалите своей отдел продаж Лидами!',
+    button: {
+      label: 'Зарегистрироваться',
+      url: '#',
+    },
+    decorImage: '@image/prepared/common/call-to-action-2.webp'
+  };
+
+section.section.call-to-action.call-to-action--reverse.call-to-action-registration-beta
+  h2.section__title.visually-hidden= callToActionRegistrationBetaContent.a11yTitle
+  .call-to-action__inner
+    .call-to-action__columns 
+      .call-to-action__content
+        .call-to-action__text= callToActionRegistrationBetaContent.text
+        +main-button(callToActionRegistrationBetaContent.button.label)(href= callToActionRegistrationBetaContent.button.url, accent, class='call-to-action__button')
+      .call-to-action__decor-image-wrapper
+        +flex-image-mask(callToActionRegistrationBetaContent.decorImage, 21, 30)(class='call-to-action__decor-image', reverse)

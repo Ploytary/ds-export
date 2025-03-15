@@ -1,0 +1,35 @@
+@use '../abstracts';
+
+.call-to-action-registration-alpha {
+  .call-to-action__decor-image {
+    position: relative;
+    max-width: 683px;
+    min-height: 280px;
+    height: 100%;
+
+    &::before {
+      @include abstracts.decor-star;
+      width: abstracts.fluid-size(40px, 90px, small, huge);
+      top: 84%;
+      left: 11.5%;
+      transform: rotate(-16deg) translate(-50%, -50%);
+      background-image: var(--brand-gradient-primary);
+    }
+  }
+
+  @include abstracts.mq-from(medium) {
+    .call-to-action__decor-image {
+      aspect-ratio: unset;
+    }
+  }
+
+  @include abstracts.mq-from(large) {
+    .call-to-action__decor-image-wrapper {
+      padding-left: 77px;
+    }
+
+    .call-to-action__decor-image {
+      min-height: 403px;
+    }
+  }
+}

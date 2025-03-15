@@ -1,0 +1,35 @@
+-
+  const partnersSectionContent = {
+    title: 'Клиенты, которые уже покупают<br><strong>Лидов для своего бизнеса</strong>',
+    description: 'Более 5000 компаний по всей России<br>уже используют покупку Лидов!',
+    list: [
+      {
+        label: 'Skoda',
+        image: '@image/prepared/content/skoda-logo.png',
+      },
+      {
+        label: 'Skillbox',
+        image: '@image/prepared/content/skillbox-logo.png',
+      },
+      {
+        label: 'World Class',
+        image: '@image/prepared/content/world-class-logo.svg',
+      },
+      {
+        label: 'Абсолют Банк',
+        image: '@image/prepared/content/absolute-bank-logo.png',
+      },
+    ],
+  };
+
+section.section.partners-section
+  h2.section__title
+    span!= partnersSectionContent.title
+  p.section__subtitle.partners-section__description!= partnersSectionContent.description
+  ul.partners-section__list
+    each partner in partnersSectionContent.list
+      li.partners-section__item 
+        .partners-section__card 
+          p.visually-hidden= partner.label
+          - const resolvedSrc = require(partner.image);
+          image(src = resolvedSrc)(loading = 'lazy', alt = `Логотип ${partner.label}`)

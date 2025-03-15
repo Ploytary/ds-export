@@ -1,0 +1,26 @@
+extends ../layout/page-layout
+
+block variables
+  -
+    const pageScripts = ['pages/home/index.ts'];
+    const pageTitle = 'Главная страница';
+    const currentPageSlug = 'home';
+
+block content
+  main(class= 'page-content page-grid')
+    h1.visually-hidden= pageTitle
+    include ../components/hero-section.pug
+    include ../components/advantages-section.pug
+    include ../components/service-prices-section.pug
+    include ../components/additional-service-section.pug
+    include ../components/partners-section.pug
+    include ../components/customer-reviews-section.pug
+    include ../components/killer-feature-section.pug
+    include ../components/call-to-action-registration-alpha.pug
+    include ../components/steps-section.pug
+    include ../components/presentation-section.pug
+    include ../components/why-us-section.pug
+    include ../components/call-to-action-registration-beta.pug
+    include ../components/faq-section.pug
+    include ../components/marketing-offer-section.pug
+    include ../components/contacts-section.pug

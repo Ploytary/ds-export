@@ -1,0 +1,27 @@
+@use '../abstracts';
+
+.faq-section {
+  &__columns {
+    display: grid;
+    gap: var(--gap-s);
+  }
+
+  &__decor-image {
+    justify-self: center;
+    width: 100%;
+    height: 100%;
+    max-width: 879px;
+    min-height: 280px;
+  }
+
+  @include abstracts.mq-from(large) {
+    &__decor-image {
+      height: auto;
+      aspect-ratio: 879 / 582;
+    }
+
+    &__columns {
+      grid-template-columns: repeat(2, calc((100% - var(--gap-s)) / 2));
+    }
+  }
+}

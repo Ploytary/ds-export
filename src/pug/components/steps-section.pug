@@ -1,0 +1,66 @@
+-
+  const stepsSectionContent = {
+    a11yTitle: 'Шаги предоставления услуги',
+    slides: [
+      {
+        placeholder: 'Как это работает?',
+        emoji: '@image/prepared/common/man-technologist.png',
+        title: 'Регистрация и добавление проекта в систему',
+        description: [
+          'Зарегистрируйтесь в нашем личном кабинете',
+          'При добавление проекта вам необходимо указать URL (адрес) своего сайта',
+          'Для вашего сайта будет сгенерирован уникальный код, который необходимо установить на свой сайт (в шаблоне сайта, перед тегом </head>)',
+        ],
+      },
+      {
+        placeholder: 'Как это работает?',
+        emoji: '@image/prepared/common/checkmark.png',
+        title: 'Выбор пакета и количества Лидов',
+        description: 'После добавления проекта в систему, вам необходимо выбрать тот пакет и количество Лидов, которое вам необходимо.',
+      },
+      {
+        placeholder: 'Как это работает?',
+        emoji: '@image/prepared/common/money-with-wings.png',
+        title: 'Оплата проекта',
+        description: 'Оплатить Лидов вы сможете пластиковой картой или безналичным переводом.',
+      },
+      {
+        placeholder: 'Как это работает?',
+        emoji: '@image/prepared/common/lock.png',
+        title: 'Получение кода для сайта',
+        description: 'После оплаты, система для вас сгенерирует код, который вам необходимо установить на свой сайт (в шаблоне сайта, перед тегом </head>).',
+      },
+      {
+        placeholder: 'Как это работает?',
+        emoji: '@image/prepared/common/star-struck.png',
+        title: 'Начало получения Лидов',
+        description: 'В зависимости от вашей тематики (услуги или товара), а также объёма вашего трафика сайта система будет добавлять в личном кабинете контакты потенциальных клиентов, заинтересованных в вашей услуги и из вашего региона.',
+      },
+    ],
+  };
+
+mixin steps-section-slide(slide)
+  .steps-section__slide
+    p.steps-section__slide-placeholder= slide.placeholder
+    .steps-section__slide-columns
+      .steps-section__slide-headline
+        p.steps-section__slide-order-number
+          +emoji-picture(slide.emoji)
+        p.steps-section__slide-title= slide.title
+      .steps-section__slide-description 
+        if Array.isArray(slide.description)
+          ol 
+            each step in slide.description
+              li= step
+        else 
+          p= slide.description
+
+section.section.steps-section
+  h2.section__title.visually-hidden= stepsSectionContent.a11yTitle
+  .swiper.brand-slider.steps-section__slider
+    ol.swiper-wrapper
+      each slide in stepsSectionContent.slides
+        li.swiper-slide
+          +steps-section-slide(slide)
+    .brand-slider__pagination
+  

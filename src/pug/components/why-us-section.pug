@@ -1,0 +1,56 @@
+-
+  const whyUsSecction = {
+    title: 'Почему лучше<br><strong>заказать Лидов у нас</strong>',
+    description: 'Лидогенерация — это стабильное получение клиентов<br>и выполнение плана по продажам!',
+    advantagesPrimary: [
+      'Только качественные Лиды. Мы идентифицируем только тех посетителей, которым интересна ваша услуги и из вашего города.',
+      'Доступная цена и отсутствие минимального порога. У нас отсутствует минимальная плата за сервис, подписка и т.п. Вы покупаете столько Лидов — сколько хотите!',
+      'Техническая поддержка и комплекс услуг. Мы работаем для вас 24/7!',
+    ],
+    advantagesSecondary: [
+      {
+        term: 'Источник Лидов',
+        description: 'контекстная реклама в Яндекс.Директ, SEO, SMM и другая реклама дополняют технологию «Лид Конвейер».',
+        image: '@image/prepared/common/high-voltage.png',
+      },
+      {
+        term: 'Вы экономите на рекламе',
+        description: 'получая контактные данных тех, кто не оставил заявки, но заинтересован в Вашем товаре или услуге — это дополнительный канал продаж.',
+        image: '@image/prepared/common/fire.png',
+      },
+      {
+        term: 'Вы сможете прогнозировать продажи',
+        description: 'чтобы не ждать, когда-же кто‑то позвонит или оставит заявку, звоните и продавайте первым!',
+        image: '@image/prepared/common/glowing-star.png',
+      },
+      {
+        term: 'Безопасно',
+        description: 'это абсолютно легальный и законный метод получения Лидов.',
+        image: '@image/prepared/common/hundred-points.png',
+      },
+      {
+        term: 'Быстро',
+        description: 'запуск и получение первых Лидов обычно занимает 5–7 дней, а добавление проекта в систему менее 1 часа.',
+        image: '@image/prepared/common/woman-running.png',
+      },
+    ],
+  };
+
+section.section.why-us-section
+  h2.section__title
+    span!= whyUsSecction.title
+  p.section__subtitle!= whyUsSecction.description
+  ul.why-us-section__advantages-primary-list
+    each advantage in whyUsSecction.advantagesPrimary
+      li.why-us-section__advantages-primary-item
+        p.why-us-section__advantages-primary-item-headline
+        p.why-us-section__advantages-primary-item-content= advantage
+  dl.why-us-section__advantages-secondary-list
+    each advantage in whyUsSecction.advantagesSecondary
+      .why-us-section__advantages-secondary-item
+        dt
+          +emoji-picture(advantage.image)
+          span= advantage.term + ':'
+        dd= advantage.description
+
+

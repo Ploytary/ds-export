@@ -1,0 +1,16 @@
+.text-link {
+  color: var(--neutral-color-50);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition-property: color;
+  transition-duration: var(--transition-hover);
+
+  &:hover {
+    color: var(--brand-color-accent-primary);
+  }
+
+  &:active {
+    transition-duration: unset;
+    color: var(--brand-color-primary);
+  }
+}

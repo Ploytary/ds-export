@@ -1,0 +1,80 @@
+@use '../abstracts';
+
+.contacts-section {
+  &__subtitle {
+    margin-bottom: 60px;
+  }
+
+  &__columns {
+    display: grid;
+    gap: var(--gap-s);
+  }
+
+  &__address {
+    padding-block: 20px;
+    padding-inline: 20px;
+  }
+
+  dt {
+    color: var(--neutral-color-50);
+  }
+
+  &__address-item {
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+
+      dt {
+        margin-bottom: 12px;
+      }
+    }
+
+
+    &--icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+
+      .svg-icon {
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }
+
+  &__image {
+    max-width: 880px;
+    border-radius: 60px;
+    object-position: bottom;
+    justify-self: center;
+  }
+
+  @include abstracts.mq-from(large) {
+    &__address-item {
+      text-align: left;
+
+      &--icon {
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+    }
+
+    &__columns {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__address {
+      padding-block: 40px;
+      padding-inline: 40px;
+    }
+  }
+
+  @include abstracts.mq-from(huge) {
+    &__address {
+      padding-block: 80px;
+      padding-inline: 80px 40px;
+    }
+  }
+}

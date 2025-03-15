@@ -1,0 +1,82 @@
+@use '../abstracts';
+
+.marketing-offer-section {
+  &__columns {
+    display: grid;
+    gap: var(--gap-m) var(--gap-s);
+
+  }
+
+  &__headline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-s);
+    container-type: inline-size;
+
+    .emoji {
+      width: 72px;
+      height: 72px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    position: relative;
+    padding-right: 30px;
+
+    p:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    p:last-of-type {
+      margin-bottom: 30px;
+    }
+
+    &::after {
+      @include abstracts.decor-star;
+      top: -2%;
+      right: 0%;
+      background-image: var(--brand-gradient-primary);
+      transform: rotate(-15deg);
+    }
+  }
+
+  @include abstracts.mq-from(large) {
+    &__text {
+      padding-right: 100px;
+
+      &::after {
+        right: 9%;
+      }
+    }
+
+    &__headline {
+      padding-left: 100px;
+      padding-right: 30px;
+    }
+
+    &__columns {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include abstracts.mq-from(huge) {
+    &__headline {
+      padding-left: 150px;
+      padding-right: 40px;
+    }
+
+    &__text {
+      padding-right: 150px;
+    }
+
+    &__title {
+      justify-content: flex-start;
+      gap: var(--gap-m);
+      text-align: left;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+-
+  const detailsStub = [
+    'Происходит обработка обезличенных данных (cookies). Cookies - маленький фрагмент данных, который сохраняется в браузере и передается при обращению к сайтам.',
+    'Вы можете разместить в политике конфиденциальности условия с согласием на передачу и обработку cookies посетителями вашего сайта. Таким образом, это гарантирует полную легальность работы с данными.',
+    'Для сайта это не может навредить, и санкций со стороны поисковых системы (Яндекс, Google) нет.',
+  ];
+
+  const faqSectionContent = {
+    title: 'Вопросы и ответы',
+    accordion: [
+      {
+        summary: 'На сколько это безопасно, законно и может ли навредить моему сайту?',
+        details: detailsStub,
+      },
+      {
+        summary: 'Откуда берутся номера телефонов?',
+        details: detailsStub,
+      },
+      {
+        summary: 'Смогу ли я сам установить код на сайт?',
+        details: detailsStub,
+      },
+      {
+        summary: 'На какую CMS или конструктор можно установить код «Лид Конвейер»?',
+        details: detailsStub,
+      },
+      {
+        summary: 'Как оплатить ваш сервис?',
+        details: detailsStub,
+      },
+    ],
+    decorImage: '@image/prepared/common/faq-image.webp'
+  };
+
+section.section.faq-section
+  h2.section__title= faqSectionContent.title
+  .faq-section__columns 
+    +accordion(faqSectionContent.accordion)(class='brand-accordion faq-section__accordion')
+    +flex-image-mask(faqSectionContent.decorImage, 32, 24)(class='faq-section__decor-image')
+

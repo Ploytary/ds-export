@@ -1,0 +1,42 @@
+-
+  const contactsSectionContent = {
+    title: 'Контакты',
+    description: 'Есть вопрос, или вы хотите получить бесплатную консультацию? Свяжитесь с нами, и мы предоставим необходимую информацию!',
+    list: [
+      {
+        term: 'Адрес офиса:',
+        desc: 'г. Москва, ул. Дубининская, д. 53',
+      },
+      {
+        term: 'Телефон:',
+        desc: '+7 495 118-32-82',
+      },
+      {
+        term: 'Электронная почта:',
+        desc: 'mailbox@leadconveer.ru',
+      },
+    ],
+    image: {
+      src: '@image/prepared/content/building-w880.webp',
+      alt: 'Здание по указанному адресу',
+    },
+  };
+
+section.section.contacts-section
+  .contacts-section__columns
+    .contacts-section__address
+      h2.section__title= contactsSectionContent.title
+      p.section__subtitle.contacts-section__subtitle= contactsSectionContent.description
+      address
+        dl
+          each item in contactsSectionContent.list
+            .contacts-section__address-item 
+              dt= item.term
+              dd= item.desc
+          .contacts-section__address-item.contacts-section__address-item--icon
+              dt Или напишите нам в любимом#[br]мессенджере:
+              dd 
+                a(href= '#')
+                  span.visually-hidden Телеграм
+                  +sprite('telegram')
+    img.contacts-section__image(src=contactsSectionContent.image.src, alt=contactsSectionContent.image.alt, loading='lazy')

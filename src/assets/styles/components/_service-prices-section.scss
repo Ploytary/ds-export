@@ -1,0 +1,92 @@
+@use '../abstracts';
+
+.service-prices-section {
+  &__description {
+    margin-bottom: 60px;
+  }
+
+  &__pricelist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap-s);
+  }
+
+  &__pricelist-item {
+    flex-grow: 1;
+    max-width: 580px;
+  }
+}
+
+.service-price-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 30px;
+  background-color: var(--neutral-color-96);
+  border-radius: 30px;
+
+  &__headline {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__category {
+    position: relative;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    border: 1px solid var(--brand-color-primary);
+    border-radius: 20px;
+
+    &::after {
+      @include abstracts.decor-star;
+      inset-block: 0;
+      margin-block: auto;
+      right: -72px;
+      background-color: var(--brand-color-primary);
+      transform: rotate(14deg);
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__content {
+    width: 85%;
+    flex-grow: 1;
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    color: var(--neutral-color-50)
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-s);
+  }
+
+  &--highlighted {
+    background-color: var(--brand-color-primary);
+    color: var(--neutral-color-100);
+
+    .service-price-card {
+      &__category {
+        background-color: var(--neutral-color-25);
+        border: 1px solid var(--neutral-color-100);
+
+        &::after {
+          background-color: var(--neutral-color-100);
+        }
+      }
+    }
+  }
+
+  @include abstracts.mq-from(medium) {
+    padding: 40px;
+  }
+}

@@ -1,0 +1,44 @@
+@use '../abstracts';
+@use 'sass:map';
+
+:root {
+  // colors
+  --brand-color-primary: hsl(0deg 0% 18%);
+  --brand-color-accent-primary: hsl(24deg 100% 50%);
+  --brand-color-accent-secondary: hsl(24deg 100% 65%);
+  --neutral-color-0: hsl(0deg 0% 0%);
+  --neutral-color-25: hsl(0deg 0% 25%);
+  --neutral-color-50: hsl(0deg 0% 50%);
+  --neutral-color-75: hsl(0deg 0% 75%);
+  --neutral-color-86: hsl(0deg 0% 86%);
+  --neutral-color-96: hsl(0deg 0% 96%);
+  --neutral-color-100: hsl(0deg 0% 100%);
+  --brand-gradient-primary: linear-gradient(to right, hsl(24deg 100% 50%) 0%, hsl(5deg 85% 65%) 27%, hsl(351deg 83% 66%) 37%, hsl(334deg 72% 63%) 48%, hsl(297deg 61% 55%) 71%, hsl(272deg 95% 53%) 100%);
+
+  // font-sizes
+  --font-fluid-size-s: #{abstracts.fluid-font-size(16px, 20px, small, huge)};
+  --font-fluid-size-m: #{abstracts.fluid-font-size(16px, 24px, small, huge)};
+  --font-fluid-size-l: #{abstracts.fluid-font-size(24px, 32px, small, huge)};
+  --font-fluid-display-size-s: #{abstracts.fluid-font-size(28px, 36px, small, huge)};
+  --font-fluid-display-size-m: #{abstracts.fluid-font-size(32px, 48px, small, huge)};
+  --font-fluid-display-size-l: #{abstracts.fluid-font-size(36px, 80px, small, huge)};
+
+  // layout
+  --layout-padding-inline: 20px;
+  --layout-content-min-width: 320px;
+  --layout-content-max-width: 1780px;
+  --layout-breakout-max-width: 200px;
+  --breakout-max-width: calc(var(--layout-content-max-width) + var(--layout-breakout-max-width));
+  --responsive-inline-width: minmax(var(--layout-padding-inline), 1fr);
+  --responsive-content-width: max(var(--layout-content-min-width), min(var(--layout-content-max-width), calc(100% - var(--layout-padding-inline) * 2)));
+  --responsive-breakout-width: minmax(0, calc((var(--breakout-max-width) - var(--layout-content-max-width)) / 2));
+
+  // transition
+  --transition-hover: 0.3s;
+  --transition-fade: 0.1s;
+  --transition-menu: 0.3s;
+
+  // gaps
+  --gap-s: 20px;
+  --gap-m: 30px;
+}

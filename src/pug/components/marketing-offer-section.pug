@@ -1,0 +1,30 @@
+-
+  const marketingOfferSectionContent = {
+    title: '<strong>Лидогенерация —</strong> это новая эра маркетинга!',
+    emoji: '@image/prepared/common/rocket.png',
+    text: [
+      'Использование лидогенерации снижает стоимость привлечения клиентов, позволяет бизнесу сосредоточиться на основном продукте и значительно упрощает процесс работы.',
+      'Стоимость заявок на нашей платформе зависит от их качества и сложности. Мы предоставляем прозрачные тарифы и выгодные условия сотрудничества.',
+      'Наша биржа — это место встречи тех, кто заказывает заявки, и тех, кто их предоставляет. Мы создаём условия для успешного сотрудничества и взаимной выгоды.',
+    ],
+    readmoreLink: {
+      label: 'Читать больше',
+      url: '#',
+    },
+    button: {
+      label: 'Купить лиды',
+      url: '#',
+    }
+  };
+
+section.section.marketing-offer-section
+  .marketing-offer-section__columns 
+    .marketing-offer-section__headline
+      h2.section__title.marketing-offer-section__title
+        span!= marketingOfferSectionContent.title
+        +emoji-picture(marketingOfferSectionContent.emoji)
+      +main-button(marketingOfferSectionContent.button.label)(href= marketingOfferSectionContent.button.url, accent)
+    .marketing-offer-section__text 
+      each paragraph in marketingOfferSectionContent.text
+        p= paragraph
+      a.text-link(href= marketingOfferSectionContent.readmoreLink.url)= marketingOfferSectionContent.readmoreLink.label

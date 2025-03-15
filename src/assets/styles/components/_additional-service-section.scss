@@ -1,0 +1,54 @@
+@use '../abstracts';
+
+.additional-service-section {
+  padding-top: 50px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap-s);
+  }
+
+  &__item {
+    width: 100%;
+    min-width: 320px;
+    max-width: 730px;
+  }
+
+  @include abstracts.mq-from(medium) {
+    &__item {
+      min-width: 580px;
+    }
+  }
+}
+
+.service-short-card {
+  $padding: 40px;
+  
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: $padding;
+  height: 100%;
+  background-color: var(--neutral-color-96);
+  border-radius: 40px;
+
+  &::after {
+    @include abstracts.decor-star;
+    right: 36px;
+    top: 36px;
+    background-image: var(--brand-gradient-primary);
+    transform: rotate(-12deg);
+  }
+
+  &__title {
+    width: 85%;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    margin-bottom: 30px;
+    flex-grow: 1;
+  }
+}

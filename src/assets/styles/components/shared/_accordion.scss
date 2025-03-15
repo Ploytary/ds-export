@@ -1,0 +1,76 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+
+  &__summary {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  &__trigger {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    border-style: none;
+    width: 100%;
+    background-color: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    position: relative;
+    transform-origin: center;
+    transition-property: transform;
+
+    & > svg {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      transition-property: opacity;
+
+      &:first-child {
+        opacity: 1;
+      }
+  
+      &:last-child {
+        opacity: 0;
+      }
+    }
+  }
+
+  :is(&__slot--open, &__slot--opened) &__icon {
+    & > svg:first-child {
+      opacity: 0;
+    }
+
+    & > svg:last-child {
+      opacity: 1;
+    }
+  }
+
+  &__details {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition-property: grid-template-rows;
+  }
+
+  :is(&__slot--open, &__slot--opened) &__details {
+    grid-template-rows: 1fr;
+  }
+
+  &__details-inner {
+    overflow: hidden;
+  }
+}
