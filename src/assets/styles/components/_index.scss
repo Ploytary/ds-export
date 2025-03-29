@@ -1,6 +1,7 @@
 @use '../abstracts';
 @forward './shared/index';
 @forward './page-header';
+@forward './burger-menu';
 @forward './section';
 @forward './hero-section';
 @forward './advantages-section';

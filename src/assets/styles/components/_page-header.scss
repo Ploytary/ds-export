@@ -1,8 +1,9 @@
 @use '../abstracts';
+@use 'sass:map';
 
 .page-header {
   position: fixed;
-  z-index: 100;
+  z-index: map.get(abstracts.$z-index, 'menu');
   top: 0;
   inset-inline: 0;
   background-color: var(--brand-color-primary);
@@ -78,39 +79,6 @@
     &:active {
       transition-duration: unset;
       color: var(--brand-color-accent-primary);
-    }
-  }
-
-  &__navigation-mobile {
-    padding-top: 100px;
-    padding-inline: 20px;
-    position: fixed;
-    gap: 40px;
-    flex-direction: column;
-    z-index: 101;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    display: none;
-    background-color: var(--brand-color-primary);
-
-    .page-header__navigation-list {
-      display: flex;
-      flex-direction: column;
-    }
-
-    &-close-button {
-      position: absolute;
-      left: 20px;
-      top: 40px;
-
-      .svg-icon {
-        transform: rotate(45deg);
-      }
-    }
-
-    .page-header__link {
-      padding-left: 0;
     }
   }
 

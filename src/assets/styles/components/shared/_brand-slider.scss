@@ -22,6 +22,7 @@
       background-color: var(--neutral-color-86);
       transition-property: background-color;
       transition-duration: var(--transition-hover);
+      cursor: pointer;
 
       &-active {
         pointer-events: none;

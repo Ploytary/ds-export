@@ -32,6 +32,10 @@
   --responsive-inline-width: minmax(var(--layout-padding-inline), 1fr);
   --responsive-content-width: max(var(--layout-content-min-width), min(var(--layout-content-max-width), calc(100% - var(--layout-padding-inline) * 2)));
   --responsive-breakout-width: minmax(0, calc((var(--breakout-max-width) - var(--layout-content-max-width)) / 2));
+  --layout-breakpoint-small: #{map.get(abstracts.$breakpoints, 'small')};
+  --layout-breakpoint-medium: #{map.get(abstracts.$breakpoints, 'medium')};
+  --layout-breakpoint-large: #{map.get(abstracts.$breakpoints, 'large')};
+  --layout-breakpoint-huge: #{map.get(abstracts.$breakpoints, 'huge')};
 
   // transition
   --transition-hover: 0.3s;

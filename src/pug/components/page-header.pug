@@ -42,15 +42,15 @@ header.page-header.page-grid
       span.visually-hidden Открыть меню
       +sprite('burger')
 
-    nav.page-header__navigation-mobile.burger-menu
-      button.button.icon-button.page-header__navigation-mobile-close-button.burger-menu__content-close-button
-        span.visually-hidden Закрыть
-        +sprite('plus')
-      ul.page-header__navigation-list 
-        each item in pageHeaderContent.navList
-          li.page-header__navigation-item
-            a.page-header__link(href = item.url)= item.label
-      p.page-header__phone 
-        +sprite('whatsapp')(class = 'page-header__phone-icon')
-        +sprite('telegram')(class = 'page-header__phone-icon')
-        a.page-header__link(href = pageHeaderContent.phone.url)= pageHeaderContent.phone.label
+.burger-menu
+  button.button.icon-button.burger-menu__close-button
+    span.visually-hidden Закрыть
+    +sprite('plus')
+  ul.burger-menu__menu
+    each item in pageHeaderContent.navList
+      li.burger-menu__menu-item
+        a.burger-menu__link(href = item.url)= item.label
+  p.burger-menu__phone 
+    +sprite('whatsapp')(class = 'page-header__phone-icon')
+    +sprite('telegram')(class = 'page-header__phone-icon')
+    a.burger-menu__link(href = pageHeaderContent.phone.url)= pageHeaderContent.phone.label

@@ -28,6 +28,16 @@ body {
   }
 }
 
+.burger-menu {
+  &__menu {
+    @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 400);
+  }
+
+  &__phone {
+    @include abstracts.set-font-properties(var(--font-fluid-size-s), 1.2, 400);
+  }
+}
+
 .main-button {
   @include abstracts.set-font-properties(var(--font-fluid-size-m), 1.2, 400);
 }
